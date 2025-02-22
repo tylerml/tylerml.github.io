@@ -1,0 +1,163 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Project List on Landing Page */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.release {
+    display: flex;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.release:hover {
+    transform: scale(1.05);
+}
+
+.release a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+.release img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.release .info {
+    text-align: left;
+}
+
+/* Project Page */
+img {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Back Button */
+.back {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.back:hover {
+    color: white;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#clickable-featured-release {
+    display: block;
+    text-decoration: none;
+    color: inherit; /* Inherit the color of the parent element */
+    user-select: text; 
+}
+
+
+/* Featured Release */
+#featured-release {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    border: 2px solid #333;
+    max-width: 600px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    pointer-events: none;
+}
+
+#featured-image {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    pointer-events: none;
+}
+
+#featured-image, #featured-title, #featured-release p {
+    pointer-events: none;
+}
+
+#audio-player {
+    pointer-events: auto; /* Ensure the audio player is still clickable */
+}
+
+.links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;  /* Stack items vertically */
+    gap: 10px;  /* Space between items */
+    align-items: center;  /* Center logos */
+    width: 100%;  /* Ensure full width */
+    justify-content: center; /* Ensure full vertical centering */
+}
+
+.links li {
+    width: 100%;
+    display: flex;
+    justify-content: center;  /* Center each item */
+    text-align: center;  /* Center the content inside */
+}
+
+
+.links a {
+    display: flex; /* Ensures the link takes up space */
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0; /* Increases clickable area */
+    max-width: 300px;
+    border-radius: 10px; /* Optional: makes it look smoother */
+    transition: background-color 0.15s ease-out;
+}
+
+.logo {
+    width: 160px;  /* Increased size */
+    height: auto;
+    transition: transform 0.15s ease-out, filter 0.15s ease-out;}
+
+.links a:hover .logo {
+        transform: scale(1.2);
+        filter: brightness(1.3);
+}
