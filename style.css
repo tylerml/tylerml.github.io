@@ -161,3 +161,56 @@ body {
         transform: scale(1.2);
         filter: brightness(1.3);
 }
+
+.social-bar {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-item {
+    position: relative;
+    display: inline-block;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+.social-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.social-dropdown a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.social-dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Show dropdown on hover */
+.social-item:hover .social-dropdown {
+    display: block;
+}
