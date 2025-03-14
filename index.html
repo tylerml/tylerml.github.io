@@ -20,15 +20,15 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
     
-    <meta property="og:title" content="TattLock - Debut Album | March 14th" />
-    <meta property="og:description" content="The self-titled TattLock album is coming to all streaming platforms March 14th!" />
+    <meta property="og:title" content="TattLock - Debut Album | Now Available!" />
+    <meta property="og:description" content="Self-titled album now streaming!" />
     <meta property="og:image" content="https://tattlock.com/images/featured/album_teaser_preview.jpg" />
     <meta property="og:url" content="https://tattlock.com/" />
     <meta property="og:type" content="website" />
   
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TattLock - Debut Album | March 14th">
-    <meta name="twitter:description" content="The self-titled TattLock album is coming to all streaming platforms March 14th!">
+    <meta name="twitter:title" content="TattLock - Debut Album | Now Available!">
+    <meta name="twitter:description" content="Self-titled album now streaming!">
     <meta name="twitter:image" content="https://tattlock.com/images/featured/album_teaser_preview.jpg">
 </head>
 <body>
@@ -81,19 +81,30 @@
     </header>
     
     <main>
-        <section id="featured-video">
-            <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/Q-w4HNOokZg" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-            </iframe>
-            <h2 id="featured-title">Eponymous album coming March 14th</h2>
-            <p>You asked for it! <sup>(Needs citation)</sup></p>
-            <p>You got it!</p>
-            <p><b>TATTLOCK</b>, available on all streaming platforms March 14th, 2025.</p>
-        </section>
+        <a href="album/tattlock" id="clickable-featured-release">
+            <section id="featured-release">
+                    <img id="featured-image" src="images/tattlock_album.jpg" alt="Featured Release">
+                    <h2 id="featured-title">TattLock (Album)</h2>
+                    <p>Released: March 14th, 2025</p>
+                    <p>The whole enchilada, 9 tracks of TattLock-y goodness</p>
+                    <p>Available on all streaming platforms now!</p>
+                <audio id="audio-player" controls controlsList="nodownload" onclick="event.preventDefault(); event.stopPropagation();" >
+                    <source src="audio/abovethecloud.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <p><i>Above The Cloud</i></p>
+                <audio id="audio-player" controls controlsList="nodownload" onclick="event.preventDefault(); event.stopPropagation();" >
+                    <source src="audio/weirdworld.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <p><i>Weird World</i></p>
+                <audio id="audio-player" controls controlsList="nodownload" onclick="event.preventDefault(); event.stopPropagation();" >
+                    <source src="audio/generalstrike.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <p><i>General Strike</i></p>
+            </section>
+        </a>
         <div class="release">
             <a href="/song/tattlock">
                 <img src="images/tattlock.jpg" alt="TattLock (single)">
