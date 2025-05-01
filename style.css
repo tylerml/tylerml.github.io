@@ -228,3 +228,7 @@ body {
     display: block;
 }
 
+.lyrics {
+    font-style: italic;
+    line-height: 1.6;
+}
