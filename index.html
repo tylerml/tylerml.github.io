@@ -81,19 +81,27 @@
     </header>
     
     <main>
-        <section id="featured-video">
-            <div class="video-wrapper">
-                <iframe 
-                    width="560" 
-                    height="315" 
-                    src="https://www.youtube.com/embed/0mMl6qaoLeY" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+        <a href="song/pillypopper" id="clickable-featured-release">
+            <section id="featured-release">
+                    <img id="featured-image" src="images/pillypopper.jpg" alt="Featured Release">
+                    <h2 id="featured-title">Pilly Popper</h2>
+                    <p>Released: March 13th, 2026</p>
+                    <p>Sit back and pop the latest single from TattLock, Pilly Popper.</p>
+                <audio id="audio-player" controls controlsList="nodownload" onclick="event.preventDefault(); event.stopPropagation();" >
+                    <source src="audio/pillypopper.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </section>
+        </a>
+        <div class="release">
+            <a href="https://www.youtube.com/watch?v=0mMl6qaoLeY">
+                <img src="images/warpigs.jpg" alt="War Pigs">
+                <div class="info">
+                    <h2>War Pigs (Black Sabbath)</h2>
+                    <p>Released: February 13th, 2026</p>
+                </div>
+            </a>
+        </div>
         <div class="release">
             <a href="/song/generalstrike">
                 <img src="images/tattlock_album.jpg" alt="General Strike">
