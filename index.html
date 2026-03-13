@@ -205,6 +205,9 @@
 
     <!-- Snow Animation -->
     <div id="snow-container"></div>
+
+    <!-- Pill Animation -->
+    <div id="pill-container"></div>
     
     <script>
         // Create falling snow effect
@@ -232,10 +235,40 @@
                 snowContainer.appendChild(snowflake);
             }
         }
+
+        // Create falling pills effect (independent of snow)
+        function createPills() {
+            const pillContainer = document.getElementById('pill-container');
+            const numberOfPills = 18;
+
+            for (let i = 0; i < numberOfPills; i++) {
+                const pill = document.createElement('div');
+                // Alternate between normal and inverted style for variety
+                pill.className = (i % 2 === 0) ? 'pill' : 'pill pill-alt';
+                pill.innerHTML = '💊';
+
+                // Random starting position
+                pill.style.left = Math.random() * 100 + '%';
+                pill.style.opacity = 0.6 + Math.random() * 0.4;
+                pill.style.fontSize = (Math.random() * 12 + 14) + 'px';
+
+                // Random animation duration
+                const duration = Math.random() * 4 + 3;
+                pill.style.animationDuration = duration + 's';
+
+                // Random delay
+                pill.style.animationDelay = Math.random() * 3 + 's';
+
+                pillContainer.appendChild(pill);
+            }
+        }
         
-        // Initialize snow when page loads
-        // DISABLED: Uncomment the line below to re-enable snow animation
+        // Initialize animations when page loads
+        // Snow is still disabled by default:
         // createSnow();
+
+        // Enable pills for this release
+        createPills();
     </script>
 </body>
 </html>
