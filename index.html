@@ -20,16 +20,16 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
     
-    <meta property="og:title" content="TattLock - Pilly Popper | New Single!" />
-    <meta property="og:description" content="New TattLock single now streaming!" />
-    <meta property="og:image" content="https://tattlock.com/images/featured/pillypopper_preview.jpg" />
+    <meta property="og:title" content="TattLock - Ghostbusters (Live)" />
+    <meta property="og:description" content="Ghostbusters — TattLock live cover of Ray Parker Jr." />
+    <meta property="og:image" content="https://i.ytimg.com/vi/yk0hgkXgebU/hqdefault.jpg" />
     <meta property="og:url" content="https://tattlock.com/" />
     <meta property="og:type" content="website" />
   
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TattLock - Pilly Popper | New Single!">
-    <meta name="twitter:description" content="New TattLock single now streaming!">
-    <meta name="twitter:image" content="https://tattlock.com/images/featured/pillypopper_preview.jpg">
+    <meta name="twitter:title" content="TattLock - Ghostbusters (Live)">
+    <meta name="twitter:description" content="Ghostbusters — TattLock live cover of Ray Parker Jr.">
+    <meta name="twitter:image" content="https://i.ytimg.com/vi/yk0hgkXgebU/hqdefault.jpg">
 </head>
 <body>
     <header>
@@ -37,33 +37,28 @@
     </header>
     
         <main>
-            <section id="featured-release-clickable">
-                    <div class="featured-streaming-bar">
-                        <a href="https://open.spotify.com/track/4lW16aE8n3q3qM7Il9FdXi?si=7a572268bf5343d1" id="featured-spotify-link">
-                            <img src="images/logos/spotify.png" alt="Listen on Spotify">
-                        </a>
-                        <a href="https://music.apple.com/us/song/pilly-popper/1884653491" id="featured-applemusic-link">
-                            <img src="images/logos/apple_music.png" alt="Listen on Apple Music">
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=xCOJZy0byGg" id="featured-youtube-link">
-                            <img src="images/logos/youtube_music.png" alt="Listen on YouTube">
-                        </a>
-                        <a href="https://distrokid.com/hyperfollow/tattlock/pilly-popper" id="featured-distrokid-link">
-                            <img src="images/logos/distrokid.png" alt="Other Platforms">
-                        </a>
-                    </div>
-                    <a href="song/pillypopper"> 
-                        <img id="featured-image-clickable" src="images/pillypopper.jpg" alt="Featured Release">
-                    </a>
-                    <h2 id="featured-title">Pilly Popper</h2>
-                    <p>Released: March 13th, 2026</p>
-                    <p>9/10 "Doctors" Recommend</p>
-                    <div><i>preview:</i></div>
-                <audio id="audio-player" controls controlsList="nodownload" onclick="event.preventDefault(); event.stopPropagation();" >
-                    <source src="audio/pillypopper.mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
+            <section id="featured-video">
+                <h2>Ghostbusters (Live)</h2>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/yk0hgkXgebU"
+                        title="Ghostbusters - TattLock (LIVE) | Ray Parker Jr. Cover"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </section>
+        <div class="release">
+            <a href="/song/pillypopper">
+                <img src="images/pillypopper.jpg" alt="Pilly Popper">
+                <div class="info">
+                    <h2>Pilly Popper</h2>
+                    <p>Released: March 13th, 2026</p>
+                </div>
+            </a>
+        </div>
         <div class="release-cover">
             <a href="https://www.youtube.com/watch?v=0mMl6qaoLeY">
                 <img src="images/warpigs.jpg" alt="War Pigs">
@@ -206,8 +201,12 @@
     <!-- Snow Animation -->
     <div id="snow-container"></div>
 
-    <!-- Pill Animation -->
+    <!-- Pumpkin and ghost animation -->
     <div id="pill-container"></div>
+
+    <!-- Rain and a rare soft flash -->
+    <div id="rain-container"></div>
+    <div id="lightning"></div>
     
     <script>
         // Create falling snow effect
@@ -236,16 +235,16 @@
             }
         }
 
-        // Create falling pills effect (independent of snow)
+        // Create falling pumpkins and ghosts (independent of snow)
         function createPills() {
             const pillContainer = document.getElementById('pill-container');
             const numberOfPills = 18;
+            const icons = ['🎃', '👻'];
 
             for (let i = 0; i < numberOfPills; i++) {
                 const pill = document.createElement('div');
-                // Alternate between normal and inverted style for variety
-                pill.className = (i % 2 === 0) ? 'pill' : 'pill pill-alt';
-                pill.innerHTML = '💊';
+                pill.className = 'pill';
+                pill.innerHTML = icons[i % icons.length];
 
                 // Random starting position
                 pill.style.left = Math.random() * 100 + '%';
@@ -263,12 +262,50 @@
             }
         }
         
+        // Light rain over the page
+        function createRain() {
+            const rainContainer = document.getElementById('rain-container');
+            const numberOfDrops = 55;
+
+            for (let i = 0; i < numberOfDrops; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'raindrop';
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.opacity = 0.2 + Math.random() * 0.45;
+                drop.style.height = (10 + Math.random() * 18) + 'px';
+                drop.style.animationDuration = (0.7 + Math.random() * 0.8) + 's';
+                drop.style.animationDelay = Math.random() * -2 + 's';
+                rainContainer.appendChild(drop);
+            }
+        }
+
+        // One soft double-glow, then a long quiet gap. Never a strobe.
+        function startLightning() {
+            const lightning = document.getElementById('lightning');
+
+            function flash() {
+                lightning.classList.remove('flash');
+                void lightning.offsetWidth;
+                lightning.classList.add('flash');
+
+                const wait = 14000 + Math.random() * 14000;
+                setTimeout(flash, wait);
+            }
+
+            setTimeout(flash, 6000 + Math.random() * 5000);
+        }
+
         // Initialize animations when page loads
         // Snow is still disabled by default:
         // createSnow();
 
-        // Enable pills for this release
-        createPills();
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!reduceMotion) {
+            createPills();
+            createRain();
+            startLightning();
+        }
     </script>
 </body>
 </html>

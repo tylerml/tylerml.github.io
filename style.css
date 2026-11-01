@@ -14,6 +14,10 @@ header {
     padding: 20px;
 }
 
+#banner {
+    filter: sepia(1) saturate(4.2) hue-rotate(318deg) brightness(1.02) contrast(1.05);
+}
+
 h1 {
     margin: 0;
 }
@@ -211,7 +215,7 @@ body {
     }
 }
 
-/* Pill Animation */
+/* Pumpkin and ghost animation */
 #pill-container {
     position: fixed;
     top: 0;
@@ -226,16 +230,8 @@ body {
 .pill {
     position: absolute;
     top: -20px;
-    color: #ff4fa3;
     user-select: none;
     animation: pill-fall linear infinite;
-    text-shadow: 0 0 6px rgba(255, 79, 163, 0.9);
-}
-
-.pill-alt {
-    color: #3cf8ff;
-    text-shadow: 0 0 6px rgba(60, 248, 255, 0.9);
-    filter: invert(0.1) hue-rotate(180deg);
 }
 
 @keyframes pill-fall {
@@ -246,6 +242,71 @@ body {
     100% {
         transform: translateY(100vh) translateX(-40px) rotate(360deg);
         opacity: 0;
+    }
+}
+
+/* Rain */
+#rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9997;
+    overflow: hidden;
+}
+
+.raindrop {
+    position: absolute;
+    top: -12vh;
+    width: 1px;
+    height: 16px;
+    background: linear-gradient(to bottom, transparent, rgba(190, 210, 230, 0.55));
+    animation: rain-fall linear infinite;
+}
+
+@keyframes rain-fall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(14deg);
+    }
+    100% {
+        transform: translateY(120vh) translateX(28px) rotate(14deg);
+    }
+}
+
+/* Soft, infrequent lightning. Peak brightness stays low. */
+#lightning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10000;
+    background: rgba(198, 220, 255, 0.32);
+    opacity: 0;
+}
+
+#lightning.flash {
+    animation: lightning-flash 1.8s ease-out;
+}
+
+@keyframes lightning-flash {
+    0% { opacity: 0; }
+    7% { opacity: 0.9; }
+    16% { opacity: 0.08; }
+    38% { opacity: 0.4; }
+    68% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #rain-container,
+    #lightning,
+    #pill-container,
+    #snow-container {
+        display: none;
     }
 }
 
