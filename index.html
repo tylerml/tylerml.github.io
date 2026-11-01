@@ -203,6 +203,10 @@
 
     <!-- Pumpkin and ghost animation -->
     <div id="pill-container"></div>
+
+    <!-- Rain and a rare soft flash -->
+    <div id="rain-container"></div>
+    <div id="lightning"></div>
     
     <script>
         // Create falling snow effect
@@ -258,12 +262,50 @@
             }
         }
         
+        // Light rain over the page
+        function createRain() {
+            const rainContainer = document.getElementById('rain-container');
+            const numberOfDrops = 55;
+
+            for (let i = 0; i < numberOfDrops; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'raindrop';
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.opacity = 0.2 + Math.random() * 0.45;
+                drop.style.height = (10 + Math.random() * 18) + 'px';
+                drop.style.animationDuration = (0.7 + Math.random() * 0.8) + 's';
+                drop.style.animationDelay = Math.random() * -2 + 's';
+                rainContainer.appendChild(drop);
+            }
+        }
+
+        // One soft double-glow, then a long quiet gap. Never a strobe.
+        function startLightning() {
+            const lightning = document.getElementById('lightning');
+
+            function flash() {
+                lightning.classList.remove('flash');
+                void lightning.offsetWidth;
+                lightning.classList.add('flash');
+
+                const wait = 14000 + Math.random() * 14000;
+                setTimeout(flash, wait);
+            }
+
+            setTimeout(flash, 6000 + Math.random() * 5000);
+        }
+
         // Initialize animations when page loads
         // Snow is still disabled by default:
         // createSnow();
 
-        // Enable pumpkins and ghosts for this release
-        createPills();
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!reduceMotion) {
+            createPills();
+            createRain();
+            startLightning();
+        }
     </script>
 </body>
 </html>
