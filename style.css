@@ -14,6 +14,10 @@ header {
     padding: 20px;
 }
 
+#banner {
+    filter: sepia(1) saturate(4.2) hue-rotate(318deg) brightness(1.02) contrast(1.05);
+}
+
 h1 {
     margin: 0;
 }
@@ -211,7 +215,7 @@ body {
     }
 }
 
-/* Pill Animation */
+/* Pumpkin and ghost animation */
 #pill-container {
     position: fixed;
     top: 0;
@@ -226,16 +230,8 @@ body {
 .pill {
     position: absolute;
     top: -20px;
-    color: #ff4fa3;
     user-select: none;
     animation: pill-fall linear infinite;
-    text-shadow: 0 0 6px rgba(255, 79, 163, 0.9);
-}
-
-.pill-alt {
-    color: #3cf8ff;
-    text-shadow: 0 0 6px rgba(60, 248, 255, 0.9);
-    filter: invert(0.1) hue-rotate(180deg);
 }
 
 @keyframes pill-fall {
